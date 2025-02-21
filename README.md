@@ -1,18 +1,18 @@
 ## Kubernetes for ML Engineers
 
-### Table of contents
+#### Table of contents
 
 - [What is this repo about?](#what-is-this-repo-about)
-- [Tools you need to install](#tools-you-need-to-install)
 - [Steps](#steps)
-    - [1. Create a local Kubernetes cluster with `kind`](#1create-local-kubernetes-cluster-with-kind)
-    - [2. Write the business logic of your app](#2write-the-business-logic-of-your-app)
-    - [3. Containerize your app with Docker](#3containerize-your-app-with-docker)
-    - [4. Build the Docker image and run it locally](#4build-the-docker-image-and-run-it-locally)
-    - [5. Push the Docker image to the local Kubernetes cluster](#5push-the-docker-image-to-the-local-kubernetes-cluster)
-    - [6. Deploy the app as a Kubernetes service](#6deploy-the-app-as-a-kubernetes-service)
-    - [7. Test it works](#7test-it-works)
-    - [Run the whole thing in one go](#run-the-whole-thing-in-one-go)
+    - [1. Install the tools](#1-install-the-tools)
+    - [2. Create a local Kubernetes cluster](#2-create-a-local-kubernetes-cluster)
+    - [3. Write the business logic of your app](#3-containerize-your-app-with-docker)
+    - [4. Containerize your app with Docker](#4-containerize-your-app-with-docker)
+    - [5. Build the Docker image and run it locally](#build-the-docker-image-and-run-it-locally)
+    - [6. Push the Docker image to the local Kubernetes cluster](#push-the-docker-image-to-the-local-kubernetes-cluster)
+    - [7. Deploy the app as a Kubernetes service](#deploy-the-app-as-a-kubernetes-service)
+    - [8. Test it works](#test-it-works)
+    - [9. Run the whole thing in one go](#run-the-whole-thing-in-one-go)
 - [Wanna learn more Real World ML/MLOps?](#wanna-learn-more-real-world-mlmlops)
 
 
@@ -26,18 +26,16 @@ Because I want you to become a Real World ML/MLOps Ninja.
 
 Let's get started.
 
+### Steps
 
-### Tools you need to install
+### 1. Install the tools
 
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) to create the project and manage the dependencies.
 - [Docker](https://docs.docker.com/get-docker/) to build and run docker images.
 - [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/) to create a local Kubernetes cluster.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/) to interact with the Kubernetes cluster.
 
-
-### Steps
-
-### 1. Create local Kubernetes cluster with `kind`
+### 2. Create a local Kubernetes cluster
 
 We will use `kind` to create a local Kubernetes cluster. It will be a simple cluster that
 will run entirely on your machine, using as Kubernetes nodes simple Docker containers.
@@ -139,7 +137,7 @@ Voila! You have a local Kubernetes cluster running on your machine.
 
 Let's now move on to the ML engineering work.
 
-#### 2. Write the business logic of your app
+#### 3. Write the business logic of your app
 
 In this case, we will create a simple FastAPI app that returns the current time when you hit the `/health` endpoint.
 
@@ -172,7 +170,7 @@ We will use `uv` to create the project, which is the most ergonomic way to creat
 
 Feel free to adjust this code to your needs.
 
-#### 3. Containerize your app with Docker
+#### 4. Containerize your app with Docker
 
 We write a [multi-stage Dockerfile](./Dockerfile) to reduce the final image size.
 
@@ -182,7 +180,7 @@ It has 2 stages:
 - runner -> where we run the FastAPI app
 
 
-#### 4. Build the Docker image and run it locally
+#### 5. Build the Docker image and run it locally (optional)
 
 To build the image, run the following command:
 
