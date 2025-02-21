@@ -6,13 +6,13 @@
 - [Steps](#steps)
     - [1. Install the tools](#1-install-the-tools)
     - [2. Create a local Kubernetes cluster](#2-create-a-local-kubernetes-cluster)
-    - [3. Write the business logic of your app](#3-containerize-your-app-with-docker)
+    - [3. Write the business logic of your app](#3-write-the-business-logic-of-your-app)
     - [4. Containerize your app with Docker](#4-containerize-your-app-with-docker)
-    - [5. Build the Docker image and run it locally](#build-the-docker-image-and-run-it-locally)
-    - [6. Push the Docker image to the local Kubernetes cluster](#push-the-docker-image-to-the-local-kubernetes-cluster)
-    - [7. Deploy the app as a Kubernetes service](#deploy-the-app-as-a-kubernetes-service)
-    - [8. Test it works](#test-it-works)
-    - [9. Run the whole thing in one go](#run-the-whole-thing-in-one-go)
+    - [5. Build the Docker image and run it locally](#5-build-the-docker-image-and-run-it-locally-optional)
+    - [6. Push the Docker image to the local Kubernetes cluster](#6-push-the-docker-image-to-the-local-kubernetes-cluster)
+    - [7. Deploy the app as a Kubernetes service](#7-deploy-the-app-as-a-kubernetes-service)
+    - [8. Test it works](#8-test-it-works)
+    - [9. Run the whole thing in one go](#9-run-the-whole-thing-in-one-go)
 - [Wanna learn more Real World ML/MLOps?](#wanna-learn-more-real-world-mlmlops)
 
 
@@ -206,7 +206,7 @@ Congratulations! You have just built and run a Docker container locally.
 Let's now take things to the next level and run it in a Kubernetes cluster.
 
 
-#### 5. Push the Docker image to the local Kubernetes cluster
+#### 6. Push the Docker image to the local Kubernetes cluster
 
 Before we can deploy our app to the cluster, we need to push the Docker image to the local Kubernetes cluster.
 
@@ -216,7 +216,7 @@ To do that, we will use the `kind` CLI to load the image into the cluster.
 kind load docker-image simple-api:v1.0.0
 ```
 
-#### 6. Deploy the app as a Kubernetes service
+#### 7. Deploy the app as a Kubernetes service
 
 Now that we have the image in the cluster, we can deploy the app as a Kubernetes service.
 
@@ -247,7 +247,7 @@ simple-api-7f4bbc478b-gfntx   1/1     Running   0          5m26s
 ```
 
 
-#### 7. Test it works
+#### 8. Test it works
 
 To test that the app is working, we can use the `kubectl` CLI to port-forward the service to our local machine:
 
@@ -263,7 +263,7 @@ curl http://localhost:5005/health
 {"status":"healthy","timestamp":"2025-02-21T15:25:55.445524"}
 ```
 
-#### 8. Run the whole thing in one go
+#### 9. Run the whole thing in one go
 
 ```bash
 # Create the Kubernetes cluster
