@@ -283,5 +283,6 @@ The sky is the limit from here.
 ### Wanna learn more Real World ML/MLOps?
 
 Subscribe for free to my newsletter to get notified when I publish new articles and courses:
-
 ### [👉👉🏻👉🏼👉🏽👉🏾👉🏿 Subscribe](https://paulabartabajo.substack.com/)
+
+### [👉👉🏻👉🏼👉🏽👉🏾👉🏿 Courses](https://realworldml.net/courses)
