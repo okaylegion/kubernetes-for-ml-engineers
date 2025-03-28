@@ -2,7 +2,7 @@
 # Kubernetes cluster operations (MLOps)
 ########################################################################
 # create the local Kubernetes cluster
-export CLUSTER_NAME=cluster-123
+export CLUSTER_NAME=cluster-789
 
 cluster:
 	kind create cluster --config kind.yaml --name $(CLUSTER_NAME)
@@ -42,8 +42,8 @@ push:
 
 # deploy the Docker image to the local Kubernetes cluster
 deploy: build push
-	kubectl apply -f deployment.yaml
-	kubectl apply -f service.yaml
+	kubectl apply -f manifests/deployment.yaml
+	kubectl apply -f manifests/service.yaml
 	kubectl wait --for=condition=ready pod -l app=simple-api --timeout=60s
 	kubectl port-forward svc/simple-api $(PORT):5000
 

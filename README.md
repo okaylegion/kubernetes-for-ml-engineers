@@ -31,7 +31,7 @@ Let's get started.
 ### 1. Install the tools
 
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) to create the project and manage the dependencies.
-- [Docker](https://docs.docker.com/get-docker/) to build and run docker images.
+- [Docker](https://docs.docker.com/get-docker/) to build and run docker images, including the nodes of the `kind` cluster.
 - [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/) to create a local Kubernetes cluster.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/) to interact with the Kubernetes cluster.
 
